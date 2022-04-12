@@ -21,6 +21,14 @@ public class Main {
         System.out.println("Got pair number " + pairNumber);
         assert(pairNumber == expectedPairNumber);
     }
+    
+    static void printReferenceManual() {
+    	for(MajorColor majorColor: MajorColor.values()) {
+    		for(MinorColor minorColor: MinorColor.values()) {
+        		System.out.println(ColorPair.GetPairNumberFromColor(majorColor, minorColor) + " " + majorColor + " " + minorColor);
+        	}
+    	}
+    }
 
     public static void main(String[] args) {
         testNumberToPair(4, MajorColor.WHITE, MinorColor.BROWN);
@@ -28,5 +36,7 @@ public class Main {
     
         testPairToNumber(MajorColor.BLACK, MinorColor.ORANGE, 12);
         testPairToNumber(MajorColor.VIOLET, MinorColor.SLATE, 25);
+        
+        printReferenceManual();
     }
 }
