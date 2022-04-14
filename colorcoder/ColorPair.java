@@ -17,9 +17,9 @@ public class ColorPair {
         public static ColorPair GetColorFromPairNumber(int pairNumber) {
             int zeroBasedPairNumber = pairNumber - 1;
             MajorColor majorColor = 
-                MajorColor.fromIndex(zeroBasedPairNumber / MinorColor.values().length);
+                Color.fromIndex(MajorColor.class, zeroBasedPairNumber / MinorColor.values().length);
             MinorColor minorColor =
-                MinorColor.fromIndex(zeroBasedPairNumber % MinorColor.values().length);
+                Color.fromIndex(MinorColor.class, zeroBasedPairNumber % MinorColor.values().length);
             return new ColorPair(majorColor, minorColor);
         }
         public static int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
